@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean.RandomIsingSpinGlassExactPartition
+import DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean.RandomIsingSherringtonKirkpatrickCavity
+import DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean.RandomIsingGlauberDynamicsMasterEquation
+import DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean.RandomIsingReplicaSymmetryBreaking
+import DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean.RandomIsingFieldTheoryFunctionalRenormalization
+
+namespace HautevilleHouse
+namespace DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean
+
+def RandomIsingDynamicsAdmissibleClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem random_ising_dynamics_endgame (A : AdmissibleClass) :
+    RandomIsingDynamicsAdmissibleClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicsDisorderedSystemsRandomIsingCanonicalLaneLean
+end HautevilleHouse
